@@ -2,6 +2,7 @@ package com.builder;
 
 public class LunchOrder {
 
+	//Create a public static inner class which has build method that return instance of outter class LunchOrder
 	public static class Builder{
 		private  String starters;
 		private  String drinks;
@@ -13,6 +14,7 @@ public class LunchOrder {
 			return new LunchOrder(this);
 		}
 		
+		//Method should act like setter and return instance
 		public Builder starter(String starters){
 			this.starters = starters;
 			return this;
@@ -39,12 +41,14 @@ public class LunchOrder {
 		}
 	}
 	
+	//make all memebers as private final
 	private final String starters;
 	private final String drinks;
 	private final String mainCourse;
 	private final String dessert;
 	private final int quantity;
 	
+	//Make constructor as private so that no other class can get the instance directly.
 	private LunchOrder(Builder builder){
 		this.starters = builder.starters;
 		this.drinks = builder.drinks;
